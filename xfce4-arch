@@ -1,17 +1,11 @@
-# xfce4-arch
-Escritorio Xfce4
-
-Actualizar el sistema
-
-pacman -Syu
-
-El microcódigo se puede actualizar a través de BIOS, 
+el microcódigo se puede actualizar a través de BIOS, 
 El kernel de Linux también puede aplicar estas actualizaciones
 durante el arranque. 
 Estas actualizaciones proporcionan correcciones de errores 
 que pueden ser críticas para la estabilidad de su sistema.
 
 pacman -S amd-ucode
+
 pacman -S intel-ucode
 
 pacman -S lsb-release os-prober git wget linux-headers
@@ -22,28 +16,33 @@ pacman -S xdg-user-dirs
 xdg-user-dirs-update
 
 pacman -S xorg xorg-apps xorg-xinit xorg-twm xterm xorg-xclock
-
 startx
 
 Instalacion del servidor X
 
-Driver Video
+	Driver Video
         lspci |grep VGA
         neofetch
-        
-pacman -S virtualbox-guest-utils 
-systemctl enable vboxservice
-        
+        pacman -S virtualbox-guest-utils 
+        systemctl enable vboxservice
 
 pacman -S xfce4 xfce4-goodies network-manager-applet
 
 pacman -S pulseaudio pavucontrol
 
-pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings 
+pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+pacman -S light-locker accountsservice
 systemctl enable lightdm
 
-pacman -S chromium vlc gnu-free-fonts ttf-hack ttf-inconsolata 
+/etc/lightdm/lightdm.conf
+/etc/lightdm/lightdm-gtk-greeter.conf
 
+
+pacman -S chromium vlc gufw leafpad
+pacman -S gnu-free-fonts ttf-hack ttf-inconsolata gnome-font-viewer 
+
+
+	
 git clone https://aur.archlinux.org/yay.git
 cd yay/
 makepkg -si
@@ -52,13 +51,14 @@ makepkg -si
 localectl --help
 localectl set-x11-keymap latam
 
+
 yay -S sierra-gtk-theme-git
 yay -S papirus-icon-theme
 yay -S pamac-aur pamac-tray-appindicator
 
 
-nano /etc/lightdm/lightdm.conf
-greeter-session=lightdm-webkit2-greeter
+
+
 
 -----------------------------------------------------------------------------------------------------
 
@@ -93,25 +93,73 @@ sudo pacman -S jasper openjpeg
 
 -----------------------------------------------------------------------------------------------------
 
-Para utilizar bashrc:
-Copiar el contenido como root con "su"
-y editamos texto
 
-gedit .bashrc
-
-copiamos texto de bashrc 
-.bashrc 
-
-para bashrc_root reemplazamos todo el texto en
-sudo nano /etc/bash.bashrc 
-nano ~/.bashrc_root 
+ display manager
 
 
-Para utilizar zshrc:
-sudo pacman -S zsh zsh-syntax-highlighting
-Copiar el contenido de zshrc como root a .zshcr
-sudo chsh -s /bin/zsh nombre_usuario
 
------------------------------------------------------------------------------------------------------
+[LIGHTDM]
+pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings 
+systemctl enable lightdm
+
+nano /etc/lightdm/lightdm.conf
+greeter-session=lightdm-webkit2-greeter
+
+lightdm-gtk-greeter
+lightdm-deepin-greeter
+lightdm-webkit2-greeter
+
+lightdm-webkit-theme-litarvan
+https://github.com/Litarvan/lightdm-webkit-theme-litarvan
+cd /usr/share/lightdm-webkit/themes/
+nano /etc/lightdm/lightdm-webkit2-greeter.con
+webkit_theme        = antergos
 
 
+
+Bloque numero activado al inicio
+pacman -S numlockx
+
+nano /etc/lightdm/lightdm.conf:
+[Seat:*]
+greeter-setup-script=/usr/bin/numlockx on
+
+
+
+
+
+[GDM - GNOME Display Manager]
+pacman -S gdm
+systemctl enable gdm
+
+yay -S gdm3setup-utils
+Una interfaz para configurar GDM3, opciones de inicio de sesión automático
+y cambiar el tema
+
+
+
+
+[LXDM - LXDE]
+pacman -S lxdm
+systemctl enable lxdm
+
+
+[SDDM - KDE]
+pacman -S sddm
+systemctl enable sddm
+
+yay -S sddm-config-editor-git
+
+
+[XDM - XORG]
+pacman -S xorg-xdm
+systemctl enable xdm
+
+pacman -S xdm-archlinux 
+systemctl enable xdm-archlinux
+
+
+nano .xsession
+startxfce4
+
+chmod 777 .xsession
