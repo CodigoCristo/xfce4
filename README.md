@@ -1,6 +1,10 @@
 # xfce4-arch
 Escritorio Xfce4
 
+Actualizar el sistema
+
+pacman -Syu
+
 El microcódigo se puede actualizar a través de BIOS, 
 El kernel de Linux también puede aplicar estas actualizaciones
 durante el arranque. 
@@ -11,7 +15,7 @@ pacman -S amd-ucode
 
 pacman -S intel-ucode
 
-pacman -S lsb-release os-prober
+pacman -S lsb-release os-prober git wget linux-headers
 
 Programa de consulta de versión LSB
 
