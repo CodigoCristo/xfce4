@@ -1,3 +1,12 @@
+# xfce4-arch
+Escritorio Xfce4
+
+Es importante antes de iniciar una instalación o actualización deben actualizar el sistema:
+
+pacman -Syyu
+
+-----------------------------------------------------------------------------------------------------
+
 el microcódigo se puede actualizar a través de BIOS, 
 El kernel de Linux también puede aplicar estas actualizaciones
 durante el arranque. 
@@ -53,7 +62,8 @@ localectl set-x11-keymap latam
 
 
 yay -S sierra-gtk-theme-git
-yay -S papirus-icon-theme
+yay -S papirus-icon-theme deepin-icon-theme
+yay -S deepin-screenshot
 yay -S pamac-aur pamac-tray-appindicator
 
 
