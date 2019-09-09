@@ -1,4 +1,4 @@
 # xfce4-arch
 
 
-Abrir el text
+Abrir xfce4-arch
