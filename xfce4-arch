@@ -16,6 +16,7 @@ pacman -S intel-ucode
 
 pacman -S lsb-release os-prober git wget linux-headers
 Programa de consulta de versión LSB
+nano /etc/lsb-release
 
 pacman -S xdg-user-dirs
 xdg-user-dirs-update
