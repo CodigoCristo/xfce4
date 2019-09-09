@@ -20,9 +20,11 @@ pacman -S lsb-release os-prober git wget linux-headers
 Programa de consulta de versión LSB
 
 pacman -S xdg-user-dirs
+
 xdg-user-dirs-update
 
 pacman -S xorg xorg-apps xorg-xinit xorg-twm xterm xorg-xclock
+
 startx
 
 Instalacion del servidor X
