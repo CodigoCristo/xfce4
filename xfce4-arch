@@ -52,6 +52,14 @@ makepkg -si
 localectl --help
 localectl set-x11-keymap latam
 
+yay -S sierra-gtk-theme-git
+yay -S papirus-icon-theme
+yay -S pamac-aur pamac-tray-appindicator
+
+
+nano /etc/lightdm/lightdm.conf
+greeter-session=lightdm-webkit2-greeter
+
 -----------------------------------------------------------------------------------------------------
 
 Organizar particiones:
