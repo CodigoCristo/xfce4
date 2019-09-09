@@ -99,7 +99,7 @@ ffmpeg -formats -E
 
 Codec de imagen
 
-sudo pacman -S jasper openjpeg
+sudo pacman -S jasper openjpeg libmng vcdimager
 
 -----------------------------------------------------------------------------------------------------
 
