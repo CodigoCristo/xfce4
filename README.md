@@ -59,8 +59,9 @@ Leer cualquier formato de disco:
 sudo pacman -S dosfstools jfsutils f2fs-tools btrfs-progs exfat-utils ntfs-3g reiserfsprogs udftools xfsprogs nilfs-utils polkit gpart mtools
 
 Compresión y Descompresión:
-
-sudo pacman -S xarchiver binutils gzip lha lrzip lzip lz4 p7zip tar xz bzip2 p7zip lbzip2 arj lzop cpio unrar unzip zstd zip lzip unarj zstd 
+>> ark
+>> xarchiver
+sudo pacman -S ark xarchiver unarchiver binutils gzip lha lrzip lzip lz4 p7zip tar xz bzip2 p7zip lbzip2 arj lzop cpio unrar unzip zstd zip lzip unarj zstd 
 
 
 CODEC DE AUDIO: 
