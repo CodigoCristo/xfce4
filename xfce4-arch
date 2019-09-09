@@ -63,7 +63,7 @@ localectl set-x11-keymap latam
 
 yay -S sierra-gtk-theme-git
 yay -S papirus-icon-theme deepin-icon-theme
-yay -S deepin-screenshot
+yay -S deepin-screenshot deepin-screen-recorder 
 yay -S pamac-aur pamac-tray-appindicator
 
 
