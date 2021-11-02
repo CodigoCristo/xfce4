@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sudo echo -e 'Section "InputClass"' > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+sudo echo -e 'Identifier "system-keyboard"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+sudo echo -e 'MatchIsKeyboard "on"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+sudo echo -e 'Option "XkbLayout" "latam"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+sudo echo -e 'EndSection' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
