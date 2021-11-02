@@ -7,7 +7,6 @@ cd yay-bin
 makepkg -si --noconfirm
 
 
-
 sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
 
 
