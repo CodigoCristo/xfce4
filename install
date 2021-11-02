@@ -1,0 +1,22 @@
+#!/bin/bash
+
+clear
+usuario=$(whoami)
+sudo cp /home/$usuario/xfce4/00-keyboard.conf /etc/X11/xorg.conf.d/
+clear
+
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si --noconfirm
+
+yay -S papirus-icon-theme --noeditmenu --noconfirm --needed
+yay -S materia-gtk-theme --noeditmenu --noconfirm --needed
+yay -S bash-completion --noeditmenu --noconfirm --needed
+yay -S plank plank-theme-namor --noeditmenu --noconfirm --needed
+
+cd ..
+cp -r xfce4/config  /home/$usuario/.config
+cp -r xfce4/local  /home/$usuario/.local
+cp xfce4/bashrc    /home/$usuario/.bashrc
+cp xfce4/face      /home/$usuario/.face
+
