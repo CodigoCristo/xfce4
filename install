@@ -7,6 +7,6 @@ cd yay-bin
 makepkg -si --noconfirm
 
 
-sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/
+sudo cp /home/$usuario/xfce4/00-keyboard.conf /etc/X11/xorg.conf.d/
 
 
