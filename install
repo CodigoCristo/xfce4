@@ -15,8 +15,13 @@ yay -S bash-completion --noeditmenu --noconfirm --needed
 yay -S plank plank-theme-namor --noeditmenu --noconfirm --needed
 
 cd ..
-mv xfce4/config/  	/home/$usuario/.config/
-mv xfce4/local/ 	/home/$usuario/.local/
-mv xfce4/bashrc   	/home/$usuario/.bashrc
-mv xfce4/face     	/home/$usuario/.face
+rm -rf /home/$usuario/.config
+rm -rf /home/$usuario/.local
+rm -rf /home/$usuario/.bashrc
+rm -rf /home/$usuario/.face
+
+cp -r xfce4/config/  	/home/$usuario/.config
+cp -r xfce4/local/ 	/home/$usuario/.local
+cp xfce4/bashrc   	/home/$usuario/.bashrc
+cp xfce4/face     	/home/$usuario/.face
 
