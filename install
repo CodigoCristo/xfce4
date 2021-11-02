@@ -1,12 +1,16 @@
 #!/bin/bash
 
+clear
 usuario=$(whoami)
+sudo cp /home/$usuario/xfce4/00-keyboard.conf /etc/X11/xorg.conf.d/
+clear
 
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si --noconfirm
 
 
-sudo cp /home/$usuario/xfce4/00-keyboard.conf /etc/X11/xorg.conf.d/
+yay -S tema --noeditmenu --noconfirm --needed
+
 
 
