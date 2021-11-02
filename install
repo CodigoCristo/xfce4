@@ -6,6 +6,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si --noconfirm
 
+
 sudo echo -e 'Section "InputClass"' > /etc/X11/xorg.conf.d/00-keyboard.conf
 sudo echo -e 'Identifier "system-keyboard"' >> /etc/X11/xorg.conf.d/00-keyboard.conf
 sudo echo -e 'MatchIsKeyboard "on"' >> /etc/X11/xorg.conf.d/00-keyboard.conf
